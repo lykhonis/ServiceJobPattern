@@ -2,6 +2,7 @@ package com.vl.android.servicejobpattern;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.widget.Toast;
 
 public class JobActivity extends Activity {
@@ -26,6 +27,12 @@ public class JobActivity extends Activity {
             mJob = new JobManager.Job("Tell Android Hi!");
             mJobManager.post(mJob);
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("job.id", mJob.getId());
     }
 
     @Override
