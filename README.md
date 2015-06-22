@@ -5,7 +5,7 @@ One of the most common questions in Android dev world is: How to communicate bet
 Since Activity and Service are going to exist in same application, it means they share same memory heap. Connecting together Activity and Service directly is good, but not scalable in a case of multiple activities and single service. To solve this problem, pattern above provides middleware, a manager to represent specific type of activity (read as action) in the application. The manager is singletone to keep track of listeners as well as jobs to do. This allows to completly detach UI (activity, fragments and etc.) from actual job in background (service).
 
 #### Service
-```
+```java
 JobManager mJobManager;
 
 public JobService() {
@@ -36,7 +36,7 @@ void handleJob(JobManager.Job job) {
 ```
 
 #### Activity
-```
+```java
 JobManager mJobManager;
 JobManager.Job mJob;
 
