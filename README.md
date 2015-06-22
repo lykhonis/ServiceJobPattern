@@ -6,6 +6,7 @@ Since Activity and Service are going to exist in same application, it means they
 
 #### Service
 ```java
+// IntentService
 JobManager mJobManager;
 
 public JobService() {
